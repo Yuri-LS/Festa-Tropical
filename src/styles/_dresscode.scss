@@ -1,0 +1,23 @@
+.dresscode {
+    display: block;
+    align-items: center;
+    color: #fff;
+    background-color: #fd3a69;
+    text-align: center;
+
+    
+    &__image {
+        height: 360px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 10px double #00c6ff;
+
+        @media (max-width: 640px) {
+            max-width: 95%;
+        }
+    }
+
+    &__text {
+        line-height: 22px;
+    }
+}

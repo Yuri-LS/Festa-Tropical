@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.scss">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <header class="hero">
@@ -19,14 +20,131 @@
                 🌴 Prepare-se para uma noite de pura diversão e magia tropical! 🌺
             </h3>
             <p>
-                Convido você para uma festa única, onde o calor do verão e o mistério das fantasias se encontram em uma celebração inesquecível. Venha vestido com sua melhor fantasia tropical e prepare-se para mergulhar em um paraíso cheio de cores, música e surpresas.
+                Convido você para uma festa única, onde o calor do verão e o mistério das fantasias se encontram em uma celebração inesquecível. Venha vestido com sua melhor fantasia tropical e prepare-se para mergulhar em um paraíso cheio de cores, músicas e surpresas.
             </p>
             <h3 class="subtitle">
-                Contagem regressiva: 105d 23h 45m 13s
+                Contagem regressiva: <span id="contador"></span>
             </h3>
+            <div class="infos-bar">
+                <ul class="infos-bar__infos">
+                    <li class="infos-bar__infos__item">
+                        <b>Local:</b>
+                        Villa d'Oro - Área externa com piscina e jardins
+                    </li>
+                    <li class="infos-bar__infos__item">
+                        <b>Data:</b>
+                        Sexta-feira, 24 de Janeiro de 2025
+                    </li>
+                    <li class="infos-bar__infos__item">
+                        <b>Horário:</b>
+                        19h até o amanhecer
+                    </li>
+                </ul>
+                <a href="#form" class="button button--primary">
+                    Confirme sua presença
+                </a>
+            </div>
         </div>
     </header>
 
+    <section class="event event--recepcao">
+        <div class="container" data-aos="fade-right">
+            <div class="event__details">
+                <h2 class="event__details__title">✨ Recepção Encantada</h2>
+                <p class="event__details__description">
+                    Ao chegar, você será recebido por dançarinas e personagens exóticos, em meio a uma decoração vibrante e tropical. Aproveite para tirar fotos nos nossos cenários temáticos.
+                </p>
+            </div>
+            <img class="event__image" src="./images/dancarinas.jpg" alt="Dançarinas">
+        </div>
+    </section>
+
+    <section class="event event--openbar event--image-left">
+        <div class="container" data-aos="fade-left">
+            <div class="event__details">
+                <h2 class="event__details__title">🍹 Open Bar Tropical</h2>
+                <p class="event__details__description">
+                    Drinks refrescantes e coloridos para todos os gostos, desde clássicos como piña colada e mojito até coquetéis exclusivos criados especialmente para a festa.
+                </p>
+            </div>
+            <img class="event__image" src="./images/openbar.jpg" alt="Drinks">
+        </div>
+    </section>
+
+    <section class="event event--dj">
+        <div class="container" data-aos="fade-right">
+            <div class="event__details">
+                <h2 class="event__details__title">🎶 Música ao Vivo e DJ</h2>
+                <p class="event__details__description">
+                    A noite começa com uma banda tocando hits tropicais e versões acústicas, seguida de um DJ que manterá a pista animada com ritmos que vão do samba ao reggaeton.
+                </p>
+            </div>
+            <img class="event__image" src="./images/dj.jpg" alt="Dançarinas">
+        </div>
+    </section>
+
+    <section class="event event--buffet event--image-left">
+        <div class="container" data-aos="fade-left">
+            <div class="event__details">
+                <h2 class="event__details__title">🍴 Gastronomia Tropical </h2>
+                <p class="event__details__description">
+                    Um buffet delicioso com petiscos e pratos inspirados na culinária tropical. De ceviches e espetinhos de frutos do mar a sobremesas de frutas frescas e coquetéis de coco.
+                </p>
+            </div>
+            <img class="event__image" src="./images/buffet.png" alt="Dançarinas">
+        </div>
+    </section>
+
+    <section class="dresscode">
+        <div class="container" data-aos="fade-up">
+            <h1 class="dresscode__title"><b>Dress Code:</b> Fantasias Tropicais</h1>
+            <img class="dresscode__image" src="./images/dresscode.jpg" alt="Fantasia Tropical">
+            <p class="dresscode__text">
+                Solte sua imaginação e venha como um personagem do paraíso! Pode ser um explorador, uma sereia, um pirata, ou até mesmo uma flor tropical. Use cores vibrantes, acessórios floridos e entre no clima da festa!
+            </p>
+        </div>
+    </section>
+
+    <section id="form" class="form">
+        <div class="container" data-aos="fade-down">
+            <h1 class="form__title">
+                <b>Confirme sua Presença:</b>
+            </h1>
+            <p class="form__text">
+                Não deixe para a última hora! Confirme sua participação até 10 de Janeiro e prepare-se para uma festa que vai marcar o início do ano com muita diversão e alegria!
+            </p>
+            <form class="form__form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
+
+                <label for="guests">Número de Acompanhantes:</label>
+                <select id="guests" name="guests" required>
+                    <option value="0">Nenhum</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3+</option>
+                </select>
+
+                <label for="mensagem">Mensagem (Opcional):</label>
+                <textarea id="message" name="message" rows="4" placeholder="Deixe uma mensagem, se desejar..."></textarea>
+
+                <input type="submit" value="Confirmar Presença">
+
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; Yuri, 2024
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+.button {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+    &--primary {
+        background-color: #5990ff;
+        color: #fff;
+        border-radius: 50;
+    }
+    
+    @media (max-width: 1024px) {
+        display: flex;
+        align-items: center;
+    }
+
+    @media (max-width: 640px) {
+        display: block;
+        width: 100%;
+    }
+
+}
